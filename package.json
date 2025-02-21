@@ -1,0 +1,25 @@
+{
+  "name": "prompt-lang",
+  "displayName": "prompt-lang",
+  "description": "syntax highlighting for .prompt files",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.97.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [{
+      "id": "prompt",
+      "aliases": ["prompt", "prompt"],
+      "extensions": [".prompt"],
+      "configuration": "./language-configuration.json"
+    }],
+    "grammars": [{
+      "language": "prompt",
+      "scopeName": "source.prompt",
+      "path": "./syntaxes/prompt.tmLanguage.json"
+    }]
+  }
+}

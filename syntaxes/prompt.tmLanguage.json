@@ -1,0 +1,56 @@
+{
+  "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+  "name": "prompt",
+  "patterns": [
+    {
+      "name": "meta.tag.prompt",
+      "begin": "<([a-zA-Z0-9_]+)>",
+      "beginCaptures": {
+        "1": { "name": "entity.name.tag.prompt" }
+      },
+      "end": "</([a-zA-Z0-9_]+)>",
+      "endCaptures": {
+        "1": { "name": "entity.name.tag.prompt" }
+      },
+      "patterns": [
+        {
+          "include": "#placeholders"
+        }
+      ]
+    },
+    {
+      "name": "variable.other.prompt",
+      "match": "\\{[a-zA-Z0-9_]+\\}"
+    }
+  ],
+  "repository": {
+    "keywords": {
+      "patterns": [
+        {
+          "name": "keyword.control.prompt",
+          "match": "\\b(if|while|for|return)\\b"
+        }
+      ]
+    },
+    "strings": {
+      "name": "string.quoted.double.prompt",
+      "begin": "\"",
+      "end": "\"",
+      "patterns": [
+        {
+          "name": "constant.character.escape.prompt",
+          "match": "\\\\."
+        }
+      ]
+    },
+    "placeholders": {
+      "patterns": [
+        {
+          "name": "variable.other.prompt",
+          "match": "\\{[a-zA-Z0-9_]+\\}"
+        }
+      ]
+    }
+  },
+  "scopeName": "source.prompt"
+}
